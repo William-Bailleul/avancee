@@ -1,3 +1,13 @@
+#-------------------------------------------------------------------------------
+# Name:        module1
+# Purpose:
+#
+# Author:      llafin
+#
+# Created:     17/11/2022
+# Copyright:   (c) llafin 2022
+# Licence:     <your licence>
+#-------------------------------------------------------------------------------
 
 import random
 
@@ -82,7 +92,6 @@ class morpion:
 
     def tour_joueur_suivant(self, player):
         return 'X' if player == 'O' else 'O'
-        
 
     def afficher_tableau(self):
         for ligne in self.tableau:
@@ -90,12 +99,1080 @@ class morpion:
                 print(item, end=" ")
             print()
 
+    def tour_bot(self, ligne, colonne, player,tour):
+
+
+
+        if tour == 1:
+            if ligne == 2 and colonne == 2:
+                self.tableau[0][2]= player
+
+            else:
+                self.tableau[1][1]= player
+
+
+
+
+        if tour == 2:
+
+
+            if ligne == 1 and colonne == 1:
+
+                if self.tableau[0][1]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][2]=='X':
+                    self.tableau[0][1]=player
+
+                if self.tableau[1][0]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[1][1]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][2]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[2][0]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[2][1]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[2][2]=='X':
+                    self.tableau[1][2]=player
+
+
+
+            if ligne == 1 and colonne == 2:
+
+                if self.tableau[0][0] == 'X':
+                    self.tableau[0][2] = player
+
+                if self.tableau[0][2]=='X':
+                    self.tableau[0][0]=player
+
+                if self.tableau[1][0]=='X':
+                    self.tableau[0][0]=player
+
+                if self.tableau[1][1]=='X':
+                    self.tableau[2][1]=player
+
+                if self.tableau[1][2]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[2][0]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[2][1]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[2][2]=='X':
+                    self.tableau[0][0]=player
+
+
+
+            if ligne == 1 and colonne == 3:
+
+                if self.tableau[0][0] == 'X':
+                    self.tableau[0][1] = player
+
+                if self.tableau[0][1]=='X':
+                    self.tableau[0][0]=player
+
+                if self.tableau[1][0]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[1][2]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[2][0]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[2][1]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[2][2]=='X':
+                    self.tableau[1][2]=player
+
+
+
+
+            if ligne == 2 and colonne == 1:
+
+                if self.tableau[0][0] == 'X':
+                    self.tableau[2][0] = player
+
+                if self.tableau[0][1]=='X':
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][2]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[1][1]=='X':
+                    self.tableau[1][2]=player
+
+                if self.tableau[1][2]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[2][0]=='X':
+                    self.tableau[0][0]=player
+
+                if self.tableau[2][1]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[2][2]=='X':
+                    self.tableau[0][0]=player
+
+
+
+
+            if ligne == 2 and colonne == 3:
+
+
+                if self.tableau[0][0] == 'X':
+                    self.tableau[2][2] = player
+
+                if self.tableau[0][1]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][2]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][0]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[1][1]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[2][0]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[2][1]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[2][2]=='X':
+                    self.tableau[0][2]=player
+
+
+
+
+
+            if ligne == 3 and colonne == 1:
+
+
+                if self.tableau[0][0] == 'X':
+                    self.tableau[1][0] = player
+
+                if self.tableau[0][1]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][2]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[1][0]=='X':
+                    self.tableau[0][0]=player
+
+                if self.tableau[1][1]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][2]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[2][1]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[2][2]=='X':
+                    self.tableau[2][1]=player
+
+
+
+            if ligne == 3 and colonne == 2:
+
+
+                if self.tableau[0][0] == 'X':
+                    self.tableau[2][2] = player
+
+                if self.tableau[0][1]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][2]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[1][0]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[1][1]=='X':
+                    self.tableau[0][1]=player
+
+                if self.tableau[1][2]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[2][0]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[2][2]=='X':
+                    self.tableau[2][0]=player
+
+
+
+            if ligne == 3 and colonne == 3:
+
+
+                if self.tableau[0][0] == 'X':
+                    self.tableau[1][2] = player
+
+                if self.tableau[0][1]=='X':
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][2]=='X':
+                    self.tableau[1][2]=player
+
+                if self.tableau[1][0]=='X':
+                    self.tableau[0][0]=player
+
+                if self.tableau[1][1]=='X':
+                    self.tableau[0][0]=player
+
+                if self.tableau[1][2]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[2][0]=='X':
+                    self.tableau[2][1]=player
+
+                if self.tableau[2][1]=='X':
+                    self.tableau[2][0]=player
+
+
+
+
+        if tour == 3:
+
+            if ligne == 1 and colonne == 1:
+
+
+
+                if self.tableau[0][1]=='X' and self.tableau[1][1]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[1][2]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[2][0]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[2][1]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][0]=='X':
+                    self.tableau[0][1]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][2]=='X':
+                    self.tableau[0][1]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[2][0]=='X':
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[2][1]=='X':
+                    self.tableau[0][1]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[2][2]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[1][1]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[1][2]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[2][0]=player
+
+                if self.tableau[2][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[1][2]=player
+
+                if self.tableau[2][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[2][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][1]=player
+
+                if self.tableau[2][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[2][1]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][2]=player
+
+
+
+
+            if ligne == 1 and colonne == 2:
+
+
+                if self.tableau[0][0]=='X' and self.tableau[1][0]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][1]=='X':
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][2]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][0]=='X':
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][1]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][2]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][0]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][2]=='X':
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[2][1]=='X':
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][1]=player
+
+
+                if self.tableau[1][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[2][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[1][2]=player
+
+                if self.tableau[2][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+
+                if self.tableau[2][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[2][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[2][2]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][1]=player
+
+
+
+
+            if ligne == 1 and colonne == 3:
+
+
+
+                if self.tableau[0][0]=='X' and self.tableau[1][0]=='X':
+                    self.tableau[0][1]=player
+
+
+                if self.tableau[0][0]=='X' and self.tableau[1][2]=='X':
+                    self.tableau[0][1]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][0]=='X':
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][1]=='X':
+                    self.tableau[0][1]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][2]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[1][0]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[2][2]=='X':
+                    self.tableau[1][2]=player
+
+
+                if self.tableau[1][0]=='X' and self.tableau[1][2]=='X':
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[1][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+
+                if self.tableau[1][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[1][2]=player
+
+
+                if self.tableau[1][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+
+                if self.tableau[2][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[2][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][1]=player
+
+                if self.tableau[2][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[1][2]=player
+
+
+
+
+
+            if ligne == 2 and colonne == 1:
+
+
+
+
+                if self.tableau[0][0]=='X' and self.tableau[0][1]=='X':
+                    self.tableau[2][0]=player
+
+
+                if self.tableau[0][0]=='X' and self.tableau[0][2]=='X':
+                    self.tableau[2][1]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][1]=='X':
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][2]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][1]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][2]=='X':
+                    self.tableau[2][0]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[0][2]=='X':
+                    self.tableau[2][2]=player
+
+
+
+                if self.tableau[0][1]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[1][2]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[2][0]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[2][0]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[2][0]=player
+
+
+                if self.tableau[0][2]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[0][0]=player
+
+
+
+                if self.tableau[0][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+
+                if self.tableau[0][2]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][1]=player
+
+
+                if self.tableau[1][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[0][0]=player
+
+
+
+                if self.tableau[1][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+
+                if self.tableau[1][2]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[2][0]=player
+
+                if self.tableau[2][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[1][2]=player
+
+
+                if self.tableau[2][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[2][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][1]=player
+
+
+                if self.tableau[2][1]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[2][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[2][2]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[0][1]=player
+
+
+
+            if ligne == 2 and colonne == 3:
+
+                if self.tableau[0][0]=='X' and self.tableau[0][1]=='X':
+                    self.tableau[2][0]=player
+
+
+                if self.tableau[0][0]=='X' and self.tableau[0][2]=='X':
+                    self.tableau[2][1]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][0]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][1]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][0]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][1]=='X':
+                    self.tableau[2][0]=player
+
+
+                if self.tableau[0][0]=='X' and self.tableau[2][2]=='X':
+                    self.tableau[2][0]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[0][2]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[1][0]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[0][0]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[2][0]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][2]=player
+
+
+                if self.tableau[0][2]=='X' and self.tableau[1][0]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[0][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[0][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[1][0]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[1][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[2][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[2][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[2][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][1]=player
+
+                if self.tableau[2][1]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[2][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[2][2]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[0][1]=player
+
+
+
+            if ligne == 3 and colonne == 1:
+
+
+                if self.tableau[0][0]=='X' and self.tableau[0][1]=='X':
+                    self.tableau[1][0]=player
+
+
+                if self.tableau[0][0]=='X' and self.tableau[0][2]=='X':
+                    self.tableau[2][1]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][1]=='X':
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][2]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][1]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][2]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[0][2]=='X':
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[1][0]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[1][2]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[2][2]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[2][1]=player
+
+
+                if self.tableau[0][2]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[0][0]=player
+
+
+                if self.tableau[0][2]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[1][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[2][0]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[0][1]=player
+
+
+                if self.tableau[1][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[2][1]=player
+
+                if self.tableau[2][1]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[0][0]=player
+
+
+                if self.tableau[2][2]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[0][1]=player
+
+
+
+
+            if ligne == 3 and colonne == 2:
+
+
+                if self.tableau[0][0]=='X' and self.tableau[0][1]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[0][2]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][0]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][1]=='X':
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][2]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][0]=='X':
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][2]=='X':
+                    self.tableau[1][0]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[0][2]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[1][0]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[2][0]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[2][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][0]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[0][2]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[1][2]=player
+
+
+                if self.tableau[0][2]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][2]=player
+
+
+                if self.tableau[1][0]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[2][0]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[0][1]=player
+
+
+                if self.tableau[1][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[2][0]=player
+
+                if self.tableau[2][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[1][2]=player
+
+                if self.tableau[2][2]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[0][1]=player
+
+
+            if ligne == 3 and colonne == 3:
+
+
+
+                if self.tableau[0][0]=='X' and self.tableau[0][1]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[0][2]=='X':
+                    self.tableau[2][1]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][0]=='X':
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][0]=='X':
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[0][2]=='X':
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[1][0]=='X':
+                    self.tableau[2][0]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[1][1]=='X':
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[2][0]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[2][1]=player
+
+
+                if self.tableau[0][1]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[2][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][0]=='X' :
+                    self.tableau[1][2]=player
+
+
+                if self.tableau[0][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[1][2]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[0][1]=player
+
+
+                if self.tableau[1][0]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[2][1]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[2][1]=player
+
+
+                if self.tableau[2][1]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[0][0]=player
+
+
+
+
+
+
+        if tour == 4:
+            if ligne == 1 and colonne == 1:
+
+                if self.tableau[0][1]=='X' and self.tableau[1][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][2]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[1][2]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][2]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[1][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[2][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[2][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][0]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[0][1]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[2][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[1][2]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[2][1]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[2][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][1]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][1]=player
+            if ligne == 1 and colonne == 2:
+
+                if self.tableau[0][0]=='X' and self.tableau[1][0]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[2][1]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][2]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][1]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][0]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[2][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[1][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[1][2]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[2][0]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[2][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][1]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+            if ligne == 1 and colonne == 3:
+
+                if self.tableau[0][0]=='X' and self.tableau[1][0]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[2][1]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[0][1]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][1]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][1]=='X' and self.tableau[1][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[1][2]=player
+
+
+
+
+
+                pass
+            if ligne == 2 and colonne == 1:
+                pass
+            if ligne == 2 and colonne == 2:
+                pass
+            if ligne == 2 and colonne == 3:
+                pass
+            if ligne == 3 and colonne == 1:
+                if self.tableau[0][0]=='X' and self.tableau[1][0]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[2][1]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][2]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][1]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[1][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[0][0]=='X' and self.tableau[2][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[1][2]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][0]=='X' and self.tableau[1][2]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][0]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[1][2]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+
+                if self.tableau[0][2]=='X' and self.tableau[2][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[1][0]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[1][2]=='X' and self.tableau[2][0]=='X' :
+                    self.tableau[2][2]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[1][2]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[2][0]=player
+
+                if self.tableau[1][0]=='X' and self.tableau[2][1]=='X' and self.tableau[2][2]=='X' :
+                    self.tableau[0][2]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][0]=='X' and self.tableau[1][1]=='X' :
+                    self.tableau[2][1]=player
+
+                if self.tableau[1][2]=='X' and self.tableau[2][0]=='X' and self.tableau[2][1]=='X' :
+                    self.tableau[0][0]=player
+            if ligne == 3 and colonne == 2:
+                pass
+            if ligne == 3 and colonne == 3:
+                pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     def start(self):
         self.creer_tableau()
+        tour=1
 
         # on tire au sort quel joueur va commencer à jouer
-        player = 'X' if self.random_premier_joueur() == 1 else 'O'
-        self.tour = 0
+        player = 'X'
         while True:
             print(f"Tour du joueur {player} ")
 
@@ -122,95 +1199,23 @@ class morpion:
             # passer au tour suivant
             player = self.tour_joueur_suivant(player)
 
-    def tour_bot(self, ligne, colonne, player):
+            self.tour_bot(ligne,colonne,player,tour)
+            tour=tour+1
+            if self.victoire_joueur(player):
+                print(f"Joueur {player} à gagné le match!")
+                break
 
+            # on regarde si il y a match nul
+            if self.tableau_remplit():
+                print("Match nul!")
+                break
 
-        if tour == 1: 
-            if ligne == 1 and colonne == 1:
-                pass
-            if ligne == 1 and colonne == 2:
-                pass
-            if ligne == 1 and colonne == 3:
-                pass
-            if ligne == 2 and colonne == 1:
-                pass
-            if ligne == 2 and colonne == 2:
-                pass
-            if ligne == 2 and colonne == 3:
-                pass
-            if ligne == 3 and colonne == 1:
-                pass
-            if ligne == 3 and colonne == 2:
-                pass
-            if ligne == 3 and colonne == 3:
-                pass
-        if tour == 2:
-            if ligne == 1 and colonne == 1:
-                pass
-            if ligne == 1 and colonne == 2:
-                pass
-            if ligne == 1 and colonne == 3:
-                pass
-            if ligne == 2 and colonne == 1:
-                pass
-            if ligne == 2 and colonne == 2:
-                pass
-            if ligne == 2 and colonne == 3:
-                pass
-            if ligne == 3 and colonne == 1:
-                pass
-            if ligne == 3 and colonne == 2:
-                pass
-            if ligne == 3 and colonne == 3:
-                pass
-        if tour == 3:
-            if ligne == 1 and colonne == 1:
-                pass
-            if ligne == 1 and colonne == 2:
-                pass
-            if ligne == 1 and colonne == 3:
-                pass
-            if ligne == 2 and colonne == 1:
-                pass
-            if ligne == 2 and colonne == 2:
-                pass
-            if ligne == 2 and colonne == 3:
-                pass
-            if ligne == 3 and colonne == 1:
-                pass
-            if ligne == 3 and colonne == 2:
-                pass
-            if ligne == 3 and colonne == 3:
-                pass
-        if tour == 4:
-            if ligne == 1 and colonne == 1:
-                pass
-            if ligne == 1 and colonne == 2:
-                pass
-            if ligne == 1 and colonne == 3:
-                pass
-            if ligne == 2 and colonne == 1:
-                pass
-            if ligne == 2 and colonne == 2:
-                pass
-            if ligne == 2 and colonne == 3:
-                pass
-            if ligne == 3 and colonne == 1:
-                pass
-            if ligne == 3 and colonne == 2:
-                pass
-            if ligne == 3 and colonne == 3:
-                pass
-
-
+            player = self.tour_joueur_suivant(player)
 
 
         # on affiche le tableau à la fin du match
         print()
         self.afficher_tableau()
-
-
-
 
 
 # on commence le match
